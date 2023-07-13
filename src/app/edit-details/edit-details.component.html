@@ -1,0 +1,107 @@
+<h3 class="text-center text-muted my-5">Customize Your Resume</h3>
+<div class="container d-flex align-items-center justify-content-center" style="margin-top: 2%; ">
+    <div class="card border rounded shadow">
+        <div class="card-body">
+            <div class="card border rounded shadow" style="width: 50rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <h5 class="col-6 text-muted"><b>Category</b></h5>
+                            <h5 class="col-3 text-muted"><b>Check</b></h5>
+                            <h5 class="col-3 text-muted"><b>Edit</b></h5>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <h5 class="col-6">Header</h5>
+                            <div class="col-3">
+                                <input type="checkbox" (change)="onCategorySelected('header')" [checked]="selectedCategories.includes('header')">
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-success" routerLink="/header">Edit</button>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <h5 class="col-6">Profile</h5>
+                            <div class="col-3">
+                                <input type="checkbox" (change)="onCategorySelected('profile')" [checked]="selectedCategories.includes('profile')">
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-success" routerLink="/profile">Edit</button>
+                            </div>
+                        </div>
+                    </li>
+
+
+                   <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <h5 class="col-6">Image</h5>
+                            <div class="col-3">
+                                <input type="checkbox" (change)="onCategorySelected('image')" [checked]="selectedCategories.includes('image')">
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-success" routerLink="/image">Edit</button>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <h5 class="col-6">Education</h5>
+                            <div class="col-3">
+                                <input type="checkbox" (change)="onCategorySelected('education')" [checked]="selectedCategories.includes('education')">
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-success" routerLink="/education">Edit</button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <h5 class="col-6">Skills</h5>
+                            <div class="col-3">
+                                <input type="checkbox" (change)="onCategorySelected('skills')" checked [checked]="selectedCategories.includes('skills')">
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-success" routerLink="/skill">Edit</button>
+                            </div>
+                        </div>
+                    </li>
+
+
+
+                    <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <h5 class="col-6">Work</h5>
+                            <div class="col-3">
+                                <input type="checkbox" (change)="onCategorySelected('work')" [checked]="selectedCategories.includes('work')">
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-success" routerLink="/work">Edit</button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item">
+                        <div class="row align-items-center">
+                            <h5 class="col-6">Additional Section</h5>
+                            <div class="col-3">
+                                <input type="checkbox" (change)="onCategorySelected('addtionalSection')" [checked]="selectedCategories.includes('addtionalSection')">
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-success" routerLink="/additionalSectional">Edit</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button (click)="save()" class="btn btn-primary" style="margin-left:45%;margin-top: 15px;">Go to Resume</button>

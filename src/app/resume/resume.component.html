@@ -1,0 +1,84 @@
+
+<div>
+<div class="mt-3">
+	<button  class="btn btn-primary"  (click)="back()" style="position:absolute;top:90px;left:20px">Back</button>
+  </div>
+<div class="text-center mt-2">
+	<button (click)="generatePdf()" class="btn btn-success">Generate CV</button>
+</div>
+
+<div #pdfContent>
+<div class="container">
+	
+
+		<header class="text-center" *ngIf="selectedCategories.includes('header')">
+			<h1>{{header?.firstName}} &nbsp;{{header?.lastName}}</h1>
+            <h2>{{header?.jobTitle}}</h2>
+            <p>Phone: {{header?.phoneNumber}} | Email: {{header?.email}}</p>
+            <hr>
+			
+		</header>
+		<main>
+			<section *ngIf="selectedCategories.includes('profile')">
+				<h3 >Profile</h3>
+				<p>{{profile}}</p>
+			</section>
+            <section *ngIf="selectedCategories.includes('education')">
+				<h3>Education</h3>
+				<ul>
+				 <ng-container *ngFor="let singleEducation of education">
+					<li>
+						<div class="section-content">
+							<h4><b>{{singleEducation.degree}}</b></h4>
+							<h5>{{singleEducation.school}}.{{singleEducation.city}},{{singleEducation.state}}</h5>			
+							<h6>{{singleEducation.startDate}} - {{singleEducation.endDate}}</h6>
+							<p>{{singleEducation.description}}</p>
+						</div>
+                    </li>
+				</ng-container>
+                </ul>
+            </section>
+			<section *ngIf="selectedCategories.includes('skills')">
+				<h3>Skills</h3>
+				<ul>
+				 <ng-container *ngFor="let singleSkill of skillArray">
+					<li ><b>{{singleSkill.skill}}</b>- {{singleSkill.level}}</li>
+				</ng-container>
+				</ul>
+			</section>
+			<section *ngIf="selectedCategories.includes('work')">
+				<h3>Work Experience</h3>
+				<ul>
+					<ng-container *ngFor="let singleWork of work">
+						<li>
+							<div class="section-content">
+								<h5><b>{{singleWork.role}}</b></h5>
+								<h5>{{singleWork.place}}.{{singleWork.city}},{{singleWork.state}}</h5>
+								<h6>{{singleWork.startDate}} - {{singleWork.endDate}}</h6>
+								<p>{{singleWork.description}}</p>
+							</div>
+						</li>
+					</ng-container>
+				</ul>
+			</section>
+
+			<section *ngIf="selectedCategories.includes('addtionalSection')">
+				<ul>
+					<ng-container *ngFor="let singleSection of additionSection">
+						<li>
+							<div class="section-content">
+								<h3><b>{{singleSection.sectionHeader}}</b></h3>
+								<p>{{singleSection.sectionDescription}}</p>
+							</div>
+						</li>
+					</ng-container>
+				</ul>
+			</section>
+			
+        </main>
+            <hr>
+</div>
+</div>
+</div> 
+
+

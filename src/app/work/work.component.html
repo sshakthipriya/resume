@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="mt-3">
+        <button  class="btn btn-primary"  (click)="back()" style="position:absolute;top:110px;">Back</button>
+      </div>
+    <h3 class="text-center mt-3">Work Experience</h3>
+    <div style="margin-left:90%">
+        <button class="btn btn-primary" (click)="addWork()"  [disabled]="work.invalid">Add</button>
+    </div>
+    <form [formGroup]="work" (ngSubmit)="submit()">
+         <div class="row">
+            <div class="col">
+                <div class="form-group mt-3">
+                        <label>Role</label>
+                        <input type="text" class="form-control mt-2" placeholder="Enter your Role" formControlName="role">
+                        <div *ngIf="role && role.touched &&role.invalid " class="text-danger">The Role field is missing</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group mt-3">
+                    <label>Place</label>
+                    <input type="text" class="form-control mt-2" placeholder="Enter the Place" formControlName="place">
+                    <div *ngIf="place && place.touched &&place.invalid " class="text-danger">The Place field is missing</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group mt-3">
+                        <label>City</label>
+                        <input type="text" class="form-control mt-2" placeholder="Enter the city" formControlName="city">
+                        <div *ngIf="city && city.touched &&city.invalid " class="text-danger">The City field is missing</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group mt-3">
+                    <label>State</label>
+                    <input type="text" class="form-control mt-2" placeholder="Enter the State" formControlName="state">
+                    <div *ngIf="state && state.touched &&state.invalid " class="text-danger">The State field is missing</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+         <div class="col">
+            <div class="form-group mt-3">
+                <label>Start Date</label>
+                <input type="date" class="form-control mt-2" formControlName="startDate">
+                <div *ngIf="startDate && startDate.touched &&startDate.invalid " class="text-danger">The Start Date field is missing</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group mt-3">
+                <label>End Date</label>
+                 <input type="date" class="form-control mt-2"  formControlName="endDate">
+                 <div *ngIf="endDate && endDate.touched &&endDate.invalid " class="text-danger">The End Date field is missing</div>
+             </div>
+        </div>
+        </div>
+             <div class="form-group mt-3">
+                <label>Description</label>
+                <textarea type="text" class="form-control mt-2" placeholder="e.g.Graduated with honors" formControlName="description"></textarea>
+                <div *ngIf="description && description.touched &&description.invalid " class="text-danger">The Description field is missing</div>
+            </div>
+            
+            <div class="text-center">
+                <button  class="btn btn-success"  (click)="navigate()" style="margin-right:5%;margin-top:1.3%">Skip</button>
+              <input type="submit" value="Next" class="mt-3 btn btn-success rounded " [disabled]="workArray.length === 0 && work.invalid">
+            </div>
+    </form>
+    </div>
+    <div class="container d-flex">
+        <ng-container *ngFor="let card of workArray; let i = index">
+           <div class="card" style="width: 18rem;" class="m-2">
+               <div class="card-body">
+                 <h5 class="card-title">{{card.role}}</h5>
+                 <p class="card-text">{{card.place}}</p>
+                 <button  class="btn btn-primary m-2" (click)="removeWork(i)">Remove</button>
+                 <button class="btn btn-primary m-2" (click)="editWork(i)">Edit</button>
+               </div>
+             </div>
+       </ng-container>
+       </div>
+   
