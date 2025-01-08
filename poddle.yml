@@ -1,0 +1,32 @@
+poddle:
+  version: "1.0"
+  project: "feed-ontario"
+  type: "WEB_SERVICE"
+  appName: "backend-service"
+  health: "/health"
+  port: 8080
+  env:
+    preview:
+      branch: "main"
+      entryPoint: "index.js"
+      domain: "backend-service-api.poddleops.com"
+      specs:
+        compute:
+          cpu: 2
+          memory: 2
+          storage: 30
+          autoScaling:
+            replica:
+              min: 1
+              max: 3
+        database:
+          cpu: 2
+          memory: 1
+          storage: 30
+          engine: "postgres"
+          version: "16"
+      variables:
+        API_BASE_URL: "https://your-url.com"
+        DATABASE_URL: "your_database_url"
+        DATABASE_USERNAME: "database_user_name"
+        DATABASE_PASSWORD: "database_password"
