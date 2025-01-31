@@ -7,7 +7,7 @@ poddle:
   port: 8080
   env:
     qa:
-      branch: "main"
+      branch: "dev"
       entryPoint: "index.js"
       specs:
         compute:
