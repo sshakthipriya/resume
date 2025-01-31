@@ -2,7 +2,7 @@ poddle:
   version: "1.0"
   project: "feed-ontario"
   type: "WEB_SERVICE"
-  appName: "video-service"
+  appName: "order-service"
   health: "/health"
   port: 8080
   env:
