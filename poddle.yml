@@ -1,27 +1,24 @@
-poddle:
+revolte:
   version: "1.0"
   project: "feed-ontario"
-  type: "WEB_SERVICE"
   appName: "alto-service"
-  health: "/health"
-  port: 8080
   env:
     qa:
       branch: "main"
-      entryPoint: "index.js"
-      specs:
-        compute:
-          cpu: 2
-          memory: 2
-          storage: 30
-        database:
-          cpu: 2
-          memory: 1
-          storage: 50
-          engine: "postgres"
-          version: "16"
-      variables:
+      services:
+        rid_1:
+          name: "demoService"
+          type: "WEB_SERVICE"
+          entryPoint: "index.js"
+          specifications:
+            cpu: 2
+            memory: 2
+            storage: 30
+            autoScaling:
+              replica:
+                min: 1
+                max: 2
+      properties:
+        health: "/health"
+        port: 8080
         API_BASE_URL: "/api/v1"
-        DATABASE_URL: "your_database_url"
-        DATABASE_USERNAME: "database_user_name"
-        DATABASE_PASSWORD: "database_password"
