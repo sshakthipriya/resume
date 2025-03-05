@@ -18,7 +18,7 @@ revolte:
               replica:
                 min: 1
                 max: 2
-      properties:
-        health: "/health"
-        port: 8080
-        API_BASE_URL: "/api/v1"
+          properties:
+            health: "/health"
+            port: 8080
+            API_BASE_URL: "/api/v1"
