@@ -3,7 +3,7 @@ revolte:
   project: "feed-ontario"
   appName: "alto-service"
   env:
-    qa:
+    staging:
       branch: "main"
       services:
         rid_1:
@@ -22,3 +22,5 @@ revolte:
             health: "/health"
             port: 8080
             API_BASE_URL: "/api/v1"
+
+
