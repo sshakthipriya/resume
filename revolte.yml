@@ -1,9 +1,9 @@
 revolte:
   version: "1.0"
-  project: "feed-ontario"
-  appName: "alto-service"
+  project: "optum"
+  appName: "stressCpu"
   env:
-    staging:
+    preview:
       branch: "main"
       services:
         rid_1:
