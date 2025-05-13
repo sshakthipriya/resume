@@ -72,7 +72,7 @@ revolte:
         rid_1:
           name: web-service
           type: WEB_SERVICE
-          entryPoint: index.js
+          entryPoint: src/index.ts
           specifications:
             cpu: 2
             memory: 2
@@ -88,7 +88,7 @@ revolte:
               DATABASE_PASSWORD: '#{db.dbPassword}'
               DATABASE_NAME: '#{db.dbName}'
               STP_MAIN_DATABASE_CONNECTION_STRING: '#{db.dbConnectionString}'
-              PORT: 8080
+              # PORT: 8080
         rid_2:
           name: db
           type: DATABASE
