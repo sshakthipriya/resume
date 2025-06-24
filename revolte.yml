@@ -4,7 +4,7 @@ revolte:
   appName: node-service
   env:
     qa:     
-      branch: "node-demo"
+      branch: node-demo
       services:
         rid_1:
           name: "userService"
