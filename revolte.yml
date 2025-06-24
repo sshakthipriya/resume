@@ -21,4 +21,3 @@ revolte:
           properties:
             health: "/health"
             port: 8080
-            variables:
